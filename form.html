@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reisboekingsformulier</title>
+    <link rel="stylesheet" href="css">
+    <style>
+       label, input, select {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reisboeking</h1>
+    <form action="boekingsverwerking.php" method="post">
+        <label for="voornaam">Voornaam:</label>
+        <input type="text" id="voornaam" name="voornaam" pattern="[A-Za-z]+" required>
+
+        <label for="achternaam">Achternaam:</label>
+        <input type="text" id="achternaam" name="achternaam" pattern="[A-Za-z]+" required>
+
+        <label>Geslacht:</label>
+        <input type="radio" id="man" name="geslacht" value="Man" checked>
+        <label for="man">Man</label>
+        <input type="radio" id="vrouw" name="geslacht" value="Vrouw">
+        <label for="vrouw">Vrouw</label>
+
+        <label for="straathuisnummer">Straat met huisnummer:</label>
+        <input type="text" id="straathuisnummer" name="straathuisnummer" required>
+
+        <label for="postcode">Postcode:</label>
+        <input type="text" id="postcode" name="postcode" required>
+
+        <label for="stad">Stad:</label>
+        <input type="text" id="stad" name="stad" required>
+
+        <label for="land">Land:</label>
+        <select id="land" name="land">
+            <option value="Nederland">Nederland</option>
+            
+        </select>
+
+        <label for="bsn">BSN-nummer (maximaal 9 cijfers):</label>
+        <input type="text" id="bsn" name="bsn" pattern="[0-9]{1,9}" required>
+
+        <label for="vakantieland">Vakantieland:</label>
+        <select id="vakantieland" name="vakantieland">
+            <option value="Hongarije">Hongarije</option>
+            <option value="Frankrijk">Frankrijk</option>
+            <option value="Spanje">Spanje</option>
+            
+        </select>
+
+        <label for="vertrekdatum">Datum van vertrek:</label>
+        <input type="date" id="vertrekdatum" name="vertrekdatum" min="<?php echo date('Y-m-d'); ?>" required>
+
+        <label for="terugkomstdatum">Datum van terugkomst:</label>
+        <input type="date" id="terugkomstdatum" name="terugkomstdatum" min="<?php echo date('Y-m-d'); ?>" required>
+
+        <label for="aantalreisgenoten">Aantal reisgenoten (max 4 mensen):</label>
+        <input type="number" id="aantalreisgenoten" name="aantalreisgenoten" min="0" max="4" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="wachtwoord">Wachtwoord (om account aan te maken):</label>
+        <input type="password" id="wachtwoord" name="wachtwoord" required>
+
+        <input type="submit" value="Boek nu">
+    </form>
+</body>
+</html>
